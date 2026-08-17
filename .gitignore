@@ -9,3 +9,6 @@ dist
 
 tsconfig.tsbuildinfo
 node_modules/.tsbuild
+
+# optional GitHub Actions workflow (zip mein bheja jata hai; is repo se push nahi hota)
+.github/workflows/
