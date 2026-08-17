@@ -1,0 +1,14 @@
+{
+  "name": "HisabKitab",
+  "short_name": "HisabKitab",
+  "description": "Udhaar / Jama / Customer Ledger — aapke Google Drive par, 100% free.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#059669",
+  "lang": "ur-PK",
+  "dir": "rtl",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

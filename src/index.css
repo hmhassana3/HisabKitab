@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'JetBrains Mono', 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: inherit;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.dark body {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Urdu text renders in Nastaliq fallback glyphs while Latin/numbers stay JetBrains Mono */
+[dir='rtl'] body,
+[dir='rtl'] .rtl,
+html[dir='rtl'] {
+  letter-spacing: 0;
+}
+
+/* slide-up animation for modals/toasts */
+@keyframes slideup {
+  from { transform: translateY(14px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slideup {
+  animation: slideup 0.18s ease-out;
+}
+
+/* thin scrollbars */
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+.dark *::-webkit-scrollbar-thumb { background: #334155; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* number inputs: hide spinners for cleaner mobile UI */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* receipt printing: only the receipt is printed */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .receipt,
+  .receipt * {
+    visibility: visible !important;
+  }
+  .receipt {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
